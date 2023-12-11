@@ -1,0 +1,7 @@
+Background Color: #1a1a1a
+Text Color: #ffffff
+Accent Color: #3498db
+Link Color: #78a5a3
+Border Color: #333333
+Highlight Color: #2ecc71
+Icon Color: #bdc3c7

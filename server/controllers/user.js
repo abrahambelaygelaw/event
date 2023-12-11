@@ -1,7 +1,7 @@
 import randomstring from "randomstring";
-import nodemailer from "nodemailer";
 import bcrypt from "bcrypt";
 import User from "./../models/User.js";
+import sendEmail from "../utils/sendEmails.js";
 const createUser = async (req, res) => {
   try {
     const { firstName, lastName, email } = req.body;
@@ -15,35 +15,15 @@ const createUser = async (req, res) => {
       password: hashedPassword,
     });
     await newUser.save();
-    const resetLink = "https://google.com";
-    sendResetEmail(email, resetLink);
+    sendEmail(email, "Password ", `here is your password ${password}`);
+    res.json("success");
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
 
-const sendResetEmail = (email, resetLink) => {
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: "abrahambelaygelaw@gmail.com",
-      pas: "299792458M/s",
-    },
-  });
-  const mailOptions = {
-    from: "abrahambelaygelaw@gmail.com",
-    to: email,
-    subject: "Password Reset",
-    text: `Click the link to reset your password: ${resetLink}`,
-  };
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error(error);
-    } else {
-      console.log("Email sent: " + info.response);
-    }
-  });
-};
-
-export { createUser };
+const updateUser = async (req, res) => {};
+const deleteUser = async (req, res) => {};
+const getUser = async (req, res) => {};
+export { updateUser, createUser, getUser, deleteUser };
