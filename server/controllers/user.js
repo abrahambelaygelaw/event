@@ -25,5 +25,8 @@ const createUser = async (req, res) => {
 
 const updateUser = async (req, res) => {};
 const deleteUser = async (req, res) => {};
-const getUser = async (req, res) => {};
+const getUser = async (req, res) => {
+  try {
+  } catch (error) {}
+};
 export { updateUser, createUser, getUser, deleteUser };

@@ -8,7 +8,7 @@ import {
 
 const router = express.Router();
 router
-  .route("/events")
+  .route("/registree")
   .get(getRegistree)
   .put(updateRegistree)
   .post(createRegistree)

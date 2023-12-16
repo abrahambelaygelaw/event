@@ -5,3 +5,9 @@ Link Color: #78a5a3
 Border Color: #333333
 Highlight Color: #2ecc71
 Icon Color: #bdc3c7
+
+
+primary color = 69AA63
+stroke color  = 8a8888
+secondary color =666866
+Background = 051104

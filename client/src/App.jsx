@@ -9,24 +9,29 @@ import Login from "./pages/Login";
 import DashboardPage from "./pages/DashboardPage";
 import Profile from "./pages/Profile";
 import { AuthProvider } from "./context/AuthProvider";
-import Registree from "./features/registree/Registree";
+import Event from "./features/event/Event";
+import "react-quill/dist/quill.snow.css"; // Import Quill styles
+import "react-toastify/dist/ReactToastify.css";
+
+import Navigation from "./components/Navigation";
+
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <>
+      <Route path="/" element={<Navigation />}>
         <Route index element={<Home />} />
-        <Route path="/events" element={<Home />} />
-        <Route path="/events/:id" element={<Registree />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<DashboardPage />} />
-        <Route path="/:username" element={<Profile />} />
-      </>
+        <Route path="events" element={<Home />} />
+        <Route path="events/:id" element={<Event />} />
+        <Route path="login" element={<Login />} />
+        <Route path="dashboard" element={<DashboardPage />} />
+        <Route path=":username" element={<Profile />} />
+      </Route>
     )
   );
 
   return (
     <AuthProvider>
-      <div className=" bg-[#1a1a1a] w-full h-screen text-white">
+      <div className=" bg-background w-full h-full text-white">
         <RouterProvider router={router} />
       </div>
     </AuthProvider>
