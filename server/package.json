@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "dev",
-    "start": "node --experimental-modules server.js"
+    "start": "node --experimental-modules server.js",
+    "build":"build"
   },
   "keywords": [],
   "author": "",
