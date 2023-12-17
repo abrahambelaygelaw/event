@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "dev",
-    "start": "nodemon"
+    "start": "node --experimental-modules server.js"
   },
   "keywords": [],
   "author": "",
