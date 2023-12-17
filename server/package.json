@@ -6,7 +6,7 @@
   "scripts": {
     "test": "dev",
     "start": "node --experimental-modules server.js",
-    "build":"build"
+    "build":"npm run build"
   },
   "keywords": [],
   "author": "",
